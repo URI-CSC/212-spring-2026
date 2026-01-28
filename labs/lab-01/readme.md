@@ -100,7 +100,9 @@ void test_two_sum_functions() {
 }
 ```
 
-At this point, you can compile and run your code to ensure that both implementations pass all the tests. Create a file named `two_sum.cpp` that includes the functions `two_sum_brute_force`, `two_sum_two_pointer`, `test_two_sum_functions`, and a `main` function that calls `test_two_sum_functions`.
+`assert` (from `<cassert>`) tests a condition at runtime and **aborts the program with an error message** if it's false, and does nothing otherwise. It's used during development to catch bugs and verify assumptions.
+
+At this point, you can compile and run your code to ensure that both implementations pass all the tests. Create a file named `two_sum.cpp` that includes the functions `two_sum_brute_force`, `two_sum_two_pointer`, `test_two_sum_functions`, and a `main` function that calls `test_two_sum_functions()`.
 ```bash
 $ g++ -std=c++11 -Wall -Werror two_sum.cpp -o two_sum 
 $ ./two_sum
