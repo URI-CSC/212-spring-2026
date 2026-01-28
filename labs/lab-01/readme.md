@@ -154,7 +154,7 @@ Input Size     Brute Force     Two-Pointer
 For solving the exercises in this lab, you will need several standard library components. The includes below provide the necessary functionality for implementing the 2SUM algorithms, testing their correctness, and benchmarking their performance. Make sure to include these lines in your `two_sum.cpp` implementation.
 
 ```c++
-#include <iostream>   // console input/output (cin, cout)
+#include <iostream>   // console input/output (std::cin, std::cout)
 #include <vector>     // dynamic arrays to store integer sequences
 #include <algorithm>  // sorting function (std::sort) for two-pointer algorithm
 #include <cassert>    // assert statements for unit testing
