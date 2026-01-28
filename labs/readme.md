@@ -1,4 +1,4 @@
-# Lab 01 - C++ Review and Benchmarking
+# Lab 01 - Benchmarking algorithms
 
 ## Overview
 
