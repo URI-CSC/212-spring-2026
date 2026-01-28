@@ -149,6 +149,20 @@ Input Size     Brute Force     Two-Pointer
 > [!WARNING]
 > All values in the table above are merely illustrative. Your actual execution times may vary based on your machine's performance and the randomness of the input arrays.
 
+## Libraries
+
+For solving the exercises in this lab, you will need several standard library components. The includes below provide the necessary functionality for implementing the 2SUM algorithms, testing their correctness, and benchmarking their performance. Make sure to include these lines in your `two_sum.cpp` implementation.
+
+```c++
+#include <iostream>   // console input/output (cin, cout)
+#include <vector>     // dynamic arrays to store integer sequences
+#include <algorithm>  // sorting function (std::sort) for two-pointer algorithm
+#include <cassert>    // assert statements for unit testing
+#include <chrono>     // high-resolution timing for benchmarking algorithms
+#include <random>     // random number generation for test arrays
+#include <iomanip>    // table formatting (setw, setprecision) for benchmark output
+```
+
 ## Submission
 
 After you have completed all the tasks, submit the files below to Gradescope. Your code should be well-formatted and easy to read. Make sure to test your code thoroughly before submitting it. Full credit for this lab requires **attendance**, **collaboration with your group**, and **active participation**. No remote submissions will be accepted. If you have any questions, please ask the instructor or the TA for help. 
