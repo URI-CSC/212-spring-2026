@@ -47,7 +47,7 @@ bool armstrong(unsigned short int n);
 ```
 
 ### Problem 5
-Write a function `str_search` that takes two strings, `pattern` and `text`, and returns the number of occurrences of `pattern` in `text`. For example, if `pattern == "ana"` and `text == "ana ate the banana"`, the result should be $3$. The length of both strings will not exceed $2^8-1$ characters. You cannot use any built-in string searching functions.
+Write a function `str_search` that takes two strings, `pattern` and `text`, and returns the number of occurrences of `pattern` in `text`. For example, if `pattern == "ana"` and `text == "ana ate the banana"`, the result should be $3$. The length of both strings will not exceed $2^8-1$ characters. You cannot use any built-in string searching functions. The search is case-sensitive.
 ```c++
 unsigned char str_search(const std::string& pattern, const std::string& text);
 ```
