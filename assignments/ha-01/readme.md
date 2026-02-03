@@ -24,18 +24,18 @@ unsigned long int hex2dec(const std::string& hex);
 ```
 
 ### Problem 2
-Create a function `string_hash` that takes a string `str` as input and returns a hash value between $0$ and $250$, inclusive. You cannot use any built-in hash functions. The hash value is computed using the $3x+y$ rule: starting with a hash value of $0$, for each character in the string (from left to right), multiply the current hash value by $3$ and add the ASCII value of the character, then take modulo $251$. For example, for the string "`abc`":
+Create a function `string_hash` that takes a string `str` as input and returns a hash value between $0$ and $250$, inclusive. You cannot use any built-in hash functions. The hash value is computed using the $31x+y$ rule: starting with a hash value of $0$, for each character in the string (from left to right), multiply the current hash value by $31$ and add the ASCII value of the character, then take modulo $251$. For example, for the string "`abc`":
 - Start with hash = $0$
-- Process 'a' (ASCII 97): hash = $(3 \times 0 + 97) \mod 251 = 97$
-- Process 'b' (ASCII 98): hash = $(3 \times 97 + 98) \mod 251 = 389 \mod 251 = 138$
-- Process 'c' (ASCII 99): hash = $(3 \times 138 + 99) \mod 251 = 513 \mod 251 = 11$
-- Final hash value = $11$
+- Process 'a' (ASCII 97): hash = $(31 \times 0 + 97) \mod 251 = 97$
+- Process 'b' (ASCII 98): hash = $(31 \times 97 + 98) \mod 251 = 389 \mod 251 = 93$
+- Process 'c' (ASCII 99): hash = $(31 \times 93 + 99) \mod 251 = 513 \mod 251 = 221$
+- Final hash value = $221$
 ```c++
 unsigned char string_hash(const std::string& str);
 ```
 
 ### Problem 3
-Write a function `dec2hex` that takes a positive integer $d$ (where $0\leq d< 2^{32}$) and returns the hexadecimal representation of the decimal number $d$. The returned string should have the prefix `0x` and be padded with zeros to 8 hex digits (32 bits). For example, for $d=342576$, your function should return `0x00053a30`. You cannot use any built-in conversion functions. To convert a decimal number to hexadecimal, repeatedly divide the number by $16$ and record the remainders. The hexadecimal digits are formed by the remainders read in reverse order.
+Write a function `dec2hex` that takes a non-negative integer $d$ (where $0\leq d< 2^{32}$) and returns the hexadecimal representation of the decimal number $d$. The returned string should have the prefix `0x` and be padded with zeros to 8 hex digits (32 bits). For example, for $d=342576$, your function should return `0x00053A30`. You cannot use any built-in conversion functions. To convert a decimal number to hexadecimal, repeatedly divide the number by $16$ and record the remainders. The hexadecimal digits are formed by the remainders read in reverse order. Ensure to use uppercase letters in your output.
 ```c++
 std::string dec2hex(unsigned int d);
 ```
