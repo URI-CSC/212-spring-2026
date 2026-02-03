@@ -18,7 +18,7 @@ You are encouraged to create an additional file (e.g., main.cpp) for testing you
 ## Problems
 
 ### Problem 1
-In the hexadecimal number system, numbers are represented using $16$ different digits: $\{0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F\}$. The hexadecimal number `AF` in decimal equals: $10\cdot16^{1}+15\cdot16^{0}=175$. Write a function named `hex2dec` that returns the decimal number corresponding to the input hexadecimal string `hex`. You cannot use any built-in conversion functions.
+In the hexadecimal number system, numbers are represented using $16$ different digits: $\{0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F\}$. The hexadecimal number `AF` in decimal equals: $10\cdot16^{1}+15\cdot16^{0}=175$. Write a function named `hex2dec` that returns the decimal number corresponding to the input hexadecimal string `hex`. You cannot use any built-in conversion functions. Input strings are case insensitive (i.e., `A` and `a` both represent 10).
 ```c++
 unsigned long int hex2dec(const std::string& hex);
 ```
