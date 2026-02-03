@@ -88,7 +88,7 @@ bool same_gmail(const std::string& email1, const std::string& email2);
 ```
 
 ### Problem 11
-Create a function `to_hostname` that extracts the hostname from a URL string. The hostname is the domain name portion of the URL. URLs follow the format `protocol://hostname/path?query`, where the protocol (e.g., `http`, `https`, `ftp`, `file`) is followed by `://`, then the hostname, then optionally a path and query string. Your function should extract and return only the hostname part. For example, for the input URL "`https://www.example.com/path/to/page?query=123`", the function should return "`www.example.com`".  You can assume the input URL always contains `://` to separate the protocol from the hostname.
+Create a function `to_hostname` that extracts the hostname from a URL string. The hostname is the domain name portion of the URL. URLs follow the format `protocol://hostname/path?query`, where the protocol (e.g., `http`, `https`, `ftp`, `file`) is followed by `://`, then the hostname, then optionally a path and query string. Your function should extract the hostname from a URL and return it in lowercase. For example, for the input URL "`https://WWW.Example.com/path/to/page?query=123`", the function should return "`www.example.com`".  You can assume the input URL always contains `://` to separate the protocol from the hostname.
 ```c++
 std::string to_hostname(const std::string& url);
 ```
