@@ -474,14 +474,16 @@ void test_bracket_capacity() {
     std::cout << "\nBracket is at capacity!\n" << std::endl;
 
     // Try to add 17th team
-    Team* extra = new Team("ExtraTeam", 1, "None");
-    bool added = bracket.add_team(extra);
-    
-    if (!added) {
-        std::cout << "Bracket full! ExtraTeam cannot enter tournament.\n" << std::endl;
-        delete extra;  // We must clean up since bracket didn't take ownership!
+    if (bracket.get_team_count() >= 16) {
+        std::cout << "Bracket full! No more teams can enter.\n" << std::endl;
+    } else {
+        Team* extra = new Team("ExtraTeam", 1, "None");
+        bool added = bracket.add_team(extra);
+        if (!added) {
+            delete extra;
+        }
     }
-
+    
     std::cout << "--- Full bracket tournament ending ---\n" << std::endl;
 }
 
