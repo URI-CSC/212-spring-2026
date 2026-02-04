@@ -44,14 +44,14 @@ int main() {
 
     std::cout << "=== Heap Allocation ===" << std::endl;
     School* s3 = new School("Gonzaga", 3);
-    std::cout << "School object created on heap ...\n" << std::endl;
+    std::cout << "School object created on heap ..." << std::endl;
     School* s4 = new School("Purdue", 4);
     std::cout << "School object created on heap ..." << std::endl;
 
     std::cout << "=== Deleting s3 only! ===" << std::endl;
     delete s3;
 
-    std::cout << "\n=== Program ending ===" << std::endl;
+    std::cout << "=== Program ending ===" << std::endl;
     return 0;
 }
 ```
@@ -60,7 +60,7 @@ int main() {
 
 1. Compile and run the program:
 ```bash
-$ g++ -std=c++11 -Wall -Werror school.cpp -o school
+$ g++ -std=c++11 -Wall school.cpp -o school
 $ ./school
 ```
 
