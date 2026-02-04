@@ -372,18 +372,30 @@ void simulate_sweet_sixteen() {
 
     std::cout << "--- Sweet 16 Games ---\n" << std::endl;
     
-    // Simulate Sweet 16 - 8 games, 8 teams eliminated
+    // Simulate Sweet 16 - 8 games, 8 winners advance
     Team* uconn = bracket.find_team("UConn");
     if (uconn) uconn->advance();
     
-    Team* nc_state = bracket.find_team("NC State");
-    if (nc_state) nc_state->advance();  // Cinderella run continues!
+    Team* auburn = bracket.find_team("Auburn");
+    if (auburn) auburn->advance();
+    
+    Team* north_carolina = bracket.find_team("North Carolina");
+    if (north_carolina) north_carolina->advance();
+    
+    Team* duke = bracket.find_team("Duke");
+    if (duke) duke->advance();
     
     Team* houston = bracket.find_team("Houston");
     if (houston) houston->advance();
     
-    Team* duke = bracket.find_team("Duke");
-    if (duke) duke->advance();
+    Team* purdue = bracket.find_team("Purdue");
+    if (purdue) purdue->advance();
+    
+    Team* kansas = bracket.find_team("Kansas");
+    if (kansas) kansas->advance();
+    
+    Team* nc_state = bracket.find_team("NC State");
+    if (nc_state) nc_state->advance();  // Cinderella run continues!
     
     // Eliminate Sweet 16 losers
     bracket.eliminate("Iowa State");
@@ -401,13 +413,20 @@ void simulate_sweet_sixteen() {
     
     std::cout << "--- Elite 8 Games ---\n" << std::endl;
     
-    // Simulate Elite 8 - 4 games, 4 teams eliminated
+    // Simulate Elite 8 - 4 games, 4 winners advance
     uconn = bracket.find_team("UConn");
     if (uconn) uconn->advance();
+    
+    purdue = bracket.find_team("Purdue");
+    if (purdue) purdue->advance();
+    
+    kansas = bracket.find_team("Kansas");
+    if (kansas) kansas->advance();
     
     nc_state = bracket.find_team("NC State");
     if (nc_state) nc_state->advance();  // Miracle run!
     
+    // Eliminate Elite 8 losers
     bracket.eliminate("Auburn");
     bracket.eliminate("North Carolina");
     bracket.eliminate("Houston");
@@ -419,7 +438,12 @@ void simulate_sweet_sixteen() {
     
     std::cout << "Total wins among remaining teams: " << bracket.get_total_wins() << std::endl;
 
+    // NOTE: We stop at the Final Four for this simulation.
+    // The remaining 4 teams will be cleaned up by the Bracket destructor,
+    // demonstrating that the destructor properly frees all remaining memory.
+
     std::cout << "\n--- Attempting to eliminate team not in bracket ---\n" << std::endl;
+
     bool result = bracket.eliminate("Kentucky");
     assert(result == false);
     std::cout << "Kentucky was already eliminated.\n" << std::endl;
