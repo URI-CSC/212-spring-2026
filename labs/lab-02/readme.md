@@ -4,6 +4,8 @@
 
 In this lab, you will explore fundamental concepts of memory management in C++ by building a March Madness bracket manager. You'll start with exercises that illustrate the difference between *stack* and *heap* allocation, observing how object lifetimes differ in each memory region. Then, you'll design and implement two classes: `Team`, which represents a tournament participant, and `Bracket`, which manages the field of teams. Through careful use of constructors and destructors, you'll gain hands-on experience with the resource acquisition and release patterns that underpin every dynamic data structure you'll encounter in this course.
 
+All tasks are expected to be completed during the lab session. However, if you run out of time, please make every effort to complete them outside of lab hours.
+
 > [!CAUTION]
 > For this lab, **AVOID** using large language models (LLMs) to **generate code or solutions** for the exercises. In particular, we ask you to explicitly **DISABLE** Copilot or similar tools in your IDE while working on this lab. You may ask specific questions to LLMs about concepts or language features/syntax, but we strongly discourage using LLMs to write code for you.
 
