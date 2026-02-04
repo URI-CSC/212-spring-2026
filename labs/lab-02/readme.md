@@ -609,15 +609,6 @@ $ ./buggy_bracket
 > [!WARNING]
 > Memory leaks are insidious — they don't cause immediate crashes, but in long-running programs they gradually consume all available memory. In our tournament metaphor, imagine running March Madness simulations for years with ghost teams accumulating in memory. Eventually, you run out of space! Learning to spot and fix these issues now will save you hours of debugging later in the course.
 
-## Libraries
-
-For solving the exercises in this lab, you will need the following standard library components:
-```cpp
-#include <iostream>   // console input/output (std::cin, std::cout)
-#include <string>     // string handling for team names and regions
-#include <cassert>    // assert statements for testing
-```
-
 ## Submission
 
 After you have completed all the tasks, submit the files below to Gradescope. Your code should be well-formatted and easy to read. Make sure to test your code thoroughly before submitting it. Full credit for this lab requires **attendance**, **collaboration with your group**, and **active participation**. No remote submissions will be accepted. If you have any questions, please ask the instructor or the TA for help.
