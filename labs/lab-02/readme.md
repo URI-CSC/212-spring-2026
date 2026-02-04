@@ -365,7 +365,7 @@ void simulate_sweet_sixteen() {
     bracket.add_team(new Team("Kansas", 1, "Midwest"));
     bracket.add_team(new Team("Tennessee", 2, "Midwest"));
     bracket.add_team(new Team("Creighton", 3, "Midwest"));
-    bracket.add_team(new Team("NC State", 11, "Midwest"));  // Cinderella!
+    bracket.add_team(new Team("NC State", 11, "Midwest"));  
     
     assert(bracket.get_team_count() == 16);
     bracket.print_bracket();
@@ -395,7 +395,7 @@ void simulate_sweet_sixteen() {
     if (kansas) kansas->advance();
     
     Team* nc_state = bracket.find_team("NC State");
-    if (nc_state) nc_state->advance();  // Cinderella run continues!
+    if (nc_state) nc_state->advance();  
     
     // Eliminate Sweet 16 losers
     bracket.eliminate("Iowa State");
