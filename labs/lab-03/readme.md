@@ -677,7 +677,8 @@ Add the following tests to `main.cpp`:
     assert(arr11.at(0) == 100);  // arr11 unchanged
     std::cout << "Copy assignment deep copy: PASSED" << std::endl;
     // Test self-assignment
-    arr11 = arr11;  // Should not crash or corrupt data
+    DynArray& ref = arr11;
+    arr11 = ref; // Should not crash or corrupt data
     assert(arr11.get_size() == 2);
     assert(arr11.at(0) == 100);
     assert(arr11.at(1) == 200);
