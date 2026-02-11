@@ -109,6 +109,7 @@ Create a file named `main.cpp` to verify your implementation:
 ```cpp
 #include "dynarray.h"
 #include <cassert>
+#include <iostream>
 
 int main() {
     std::cout << "=== Task 1: Basic Dynamic Array ===" << std::endl;
