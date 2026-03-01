@@ -173,7 +173,8 @@ A fixed-size array with a live window `[head, tail)`. `data[]` is a plain array 
 | `const int& back() const` | Returns a reference to the last element in the live window. Requires `!empty()`. |
 
 ```bash
-$ g++ -std=c++11 -Wall -Werror part2/block.cpp part2/test_block.cpp -o test_block && ./test_block
+# move into the part2 directory, then compile and run
+$ g++ -std=c++11 -Wall -Werror block.cpp test_block.cpp -o test_block && ./test_block
 ```
 
 #### Class BlockMap: `part2/blockmap.cpp`
@@ -198,7 +199,8 @@ A circular array of `Block*` pointers. BlockMap **owns** every block it holds: `
 | `void resize()` *(private)* | Doubles the capacity of the slots array, preserving logical block order. |
 
 ```bash
-$ g++ -std=c++11 -Wall -Werror part2/block.cpp part2/blockmap.cpp part2/test_blockmap.cpp -o test_blockmap && ./test_blockmap
+# move into the part2 directory, then compile and run
+$ g++ -std=c++11 -Wall -Werror block.cpp blockmap.cpp test_blockmap.cpp -o test_blockmap && ./test_blockmap
 ```
 
 #### Class Deque: `part2/deque.cpp`
@@ -221,7 +223,8 @@ A deque backed by a `BlockMap`. The Deque never calls `new` or `delete` directly
 > The `Deque` destructor does **not** need to be written. When a `Deque` goes out of scope, `~BlockMap()` runs automatically on the `bmap` member and frees every Block and the slots array.
 
 ```bash
-$ g++ -std=c++11 -Wall -Werror part2/block.cpp part2/blockmap.cpp part2/deque.cpp part2/test_deque.cpp -o test_deque && ./test_deque
+# move into the part2 directory, then compile and run
+$ g++ -std=c++11 -Wall -Werror block.cpp blockmap.cpp deque.cpp test_deque.cpp -o test_deque && ./test_deque
 ```
 
 ## Submission and Grading
