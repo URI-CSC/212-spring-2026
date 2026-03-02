@@ -112,7 +112,9 @@ This gives you O(1) push and pop at both ends: only the front or back block is e
 
 The diagram below uses `BLOCK_SIZE = 4` and holds values 5 through 60 (front to back).
 
-![BlockMap diagram](./fig1.png)
+<p align="center">
+  <img src="./fig1.png" width="70%">
+</p>
 
 Each block tracks a **live window** `[head, tail)` inside its fixed array:
 - `head > 0` — room to `push_front` without allocating a new block
