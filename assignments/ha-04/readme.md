@@ -96,7 +96,8 @@ The **Rule of Three** states that if your class needs to define any one of the f
 
 ```bash
 # move into the part1 directory, then compile and run
-$ g++ -std=c++11 -Wall -Werror pointers.cpp test_pointers.cpp -o test_pointers && ./test_pointers
+$ g++ -std=c++11 -Wall -Werror pointers.cpp test_pointers.cpp -o test_pointers
+$ ./test_pointers
 ```
 
 ## Part 2: Deque via Segmented Array
@@ -174,7 +175,8 @@ A fixed-size array with a live window `[head, tail)`. `data[]` is a plain array 
 
 ```bash
 # move into the part2 directory, then compile and run
-$ g++ -std=c++11 -Wall -Werror block.cpp test_block.cpp -o test_block && ./test_block
+$ g++ -std=c++11 -Wall -Werror block.cpp test_block.cpp -o test_block
+$ ./test_block
 ```
 
 #### Class BlockMap: `part2/blockmap.cpp`
@@ -200,7 +202,8 @@ A circular array of `Block*` pointers. BlockMap **owns** every block it holds: `
 
 ```bash
 # move into the part2 directory, then compile and run
-$ g++ -std=c++11 -Wall -Werror block.cpp blockmap.cpp test_blockmap.cpp -o test_blockmap && ./test_blockmap
+$ g++ -std=c++11 -Wall -Werror block.cpp blockmap.cpp test_blockmap.cpp -o test_blockmap
+$ ./test_blockmap
 ```
 
 #### Class Deque: `part2/deque.cpp`
@@ -224,7 +227,8 @@ A deque backed by a `BlockMap`. The Deque never calls `new` or `delete` directly
 
 ```bash
 # move into the part2 directory, then compile and run
-$ g++ -std=c++11 -Wall -Werror block.cpp blockmap.cpp deque.cpp test_deque.cpp -o test_deque && ./test_deque
+$ g++ -std=c++11 -Wall -Werror block.cpp blockmap.cpp deque.cpp test_deque.cpp -o test_deque
+$ ./test_deque
 ```
 
 ## Submission and Grading
