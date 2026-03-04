@@ -1,10 +1,8 @@
-# Lab 04 - Heaps and Priority Queues
+# Lab 04 - Priority Queues
 
 ## Overview
 
-In this lab, you will design and implement a **max-priority queue** backed by a binary max-heap, then use that same heap insight to implement **buildHeap** (an algorithm that constructs a heap in linear time).
-
-You will work with **strings** throughout. The max-priority queue returns the alphabetically greatest string. The same underlying heap mechanics drive all three tasks.
+In this lab, you will design and implement a **max-priority queue** backed by a binary max-heap, then use that same heap insight to implement **buildHeap** (an algorithm that constructs a heap in **linear time**). You will work with **strings** throughout. The max-priority queue returns the alphabetically greatest string. 
 
 All tasks are expected to be completed during the lab session. However, if you run out of time, please make every effort to complete them outside of lab hours.
 
@@ -65,21 +63,12 @@ $ g++ -std=c++11 -Wall -Werror maxpqueue.cpp testmaxpqueue.cpp -o testmaxpqueue
 $ ./testmaxpqueue
 ```
 
-> [!NOTE]
-> The heap uses a **0-indexed array**: the root is at `data[0]` and the active elements occupy `data[0 .. sz-1]`. You allocate exactly `capacity` strings.
-
 > [!WARNING]
 > Because `MaxPQueue` owns a dynamically allocated array, failing to implement the **Rule of Three** properly leads to subtle bugs. Without a custom copy constructor, `MaxPQueue b = a;` would make both `a` and `b` point to the *same* underlying array. Modifying `b` would corrupt `a`, and when both destructors run they would attempt to `delete[]` the same memory causing undefined behavior. Always implement destructor, copy constructor, and copy assignment together.
 
 ## Task 2: buildHeap
 
-You have a `MaxPQueue` that supports `push` in $\Theta(\log n)$ time. If you want to initialize a queue from an existing collection of $n$ strings by pushing them one at a time, you pay $\Theta(n \log n)$ total. Can we do better?
-
-Yes, **buildHeap** constructs a valid max-heap from an unsorted array in $\Theta(n)$ time.
-
-### The Naive Approach
-
-Calling `push` $n$ times works, but each call may trigger `upHeap`, which climbs $\Theta(\log n)$ levels in the worst case. The total time is $\Theta(n \log n)$.
+You have a `MaxPQueue` that supports `push` in $\Theta(\log n)$ time. If you want to initialize a queue from an existing collection of $n$ strings by pushing them one at a time, you pay $\Theta(n \log n)$ total. Can we do better? Yes, **buildHeap** constructs a valid max-heap from an unsorted array in $\Theta(n)$ time.
 
 ### buildHeap
 
@@ -227,7 +216,5 @@ $ ./jobqueue
 
 After you have completed all the tasks, submit the files below to Gradescope. Your code should be well-formatted and easy to read. Make sure to test your code thoroughly before submitting it. Full credit for this lab requires **attendance**, **collaboration with your group**, and **active participation**. No remote submissions will be accepted. If you have any questions, please ask the instructor or the TA for help.
 
-- `maxpqueue.h` *(provided, do not modify)*
 - `maxpqueue.cpp`
-- `testmaxpqueue.cpp` *(provided, do not modify)*
 - `jobqueue.cpp`
