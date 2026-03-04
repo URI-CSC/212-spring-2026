@@ -12,22 +12,16 @@
 //   left child of i   -> data[2*i + 1]
 //   right child of i  -> data[2*i + 2]
 //   parent of i       -> data[(i - 1) / 2]
-//
-// The heap invariant holds at all times: every node is greater than or equal
-// to both of its children, so data[0] always holds the maximum element.
 class MaxPQueue {
 private:
-    std::string* data;   // 0-indexed heap array: active elements at data[0..sz-1]
+    std::string* data;   // 0-indexed heap array of strings
     int capacity;        // maximum number of elements the queue can hold
     int sz;              // current number of elements in the queue
 
     // Moves the element at pos upward until the max-heap property is restored.
-    // Called internally after inserting a new element at position data[sz-1].
     void upHeap(int pos);
 
     // Moves the element at pos downward until the max-heap property is restored.
-    // Called internally after moving the last element to data[0] during pop,
-    // and during the buildHeap constructor.
     void downHeap(int pos);
 
 public:
