@@ -153,7 +153,7 @@ int main() {
     run_test("max capacity", 1, [](){
         const int N = 4;
         BlockMap bm(4);
-        auto blocks = new Block*[N];
+        Block* blocks[N];
         for (int i = 0; i < N; i++) {
             blocks[i] = new Block(0, 0);
             blocks[i]->push_back(i);
@@ -165,6 +165,8 @@ int main() {
 
         check(bm.front_block() == blocks[0], "front_block() should be correct");
         check(bm.back_block() == blocks[N - 1], "back_block() should be correct");
+
+        // Blockmap has ownership of Blocks[i], so no memory leaks
     });
 
     // -- Test 9: circular wrapping with push_front and push_back ------------
