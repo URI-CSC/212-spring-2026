@@ -148,25 +148,58 @@ int main() {
         }
     });
 
-    // -- Test 8: circular wrapping with push_front ------------
-    // Push 6 blocks to the front; last pushed = logical index 0.
-    run_test("circular push_front", 2, [](){
+    // -- Test 8: test blockmap at max capacity ------------
+    // Push 4 blocks to the back
+    run_test("max capacity", 1, [](){
+        const int N = 4;
         BlockMap bm(4);
+        Block* blocks[N];
+        for (int i = 0; i < N; i++) {
+            blocks[i] = new Block(0, 0);
+            blocks[i]->push_back(i);
+            bm.push_back_block(blocks[i]);
+        }
+
+        for (int i = 0; i < N; i++)
+            check(bm.get_block(i) == blocks[i], "get_block(i) should be correct");
+
+        check(bm.front_block() == blocks[0], "front_block() should be correct");
+        check(bm.back_block() == blocks[N - 1], "back_block() should be correct");
+
+        // Blockmap has ownership of Blocks[i], so no memory leaks
+    });
+
+    // -- Test 9: circular wrapping with push_front and push_back ------------
+    // Push 6 blocks to the front/back; last pushed = logical index 0.
+    run_test("circular push_front and push_back", 1, [](){
+        BlockMap bm(4), bmb(4);
         const int N = 6;
         for (int i = 0; i < N; i++) {
             Block* b = new Block(BLOCK_SIZE, BLOCK_SIZE);
             b->push_front(i * 5);
             bm.push_front_block(b);
+
+            Block* bb = new Block(BLOCK_SIZE, BLOCK_SIZE);
+            bb->push_front(i * 5);
+            bmb.push_back_block(bb);
         }
-        check(bm.size() == (size_t)N,
-              "size() should be 6");
+        check(bm.size() == (size_t)N && bmb.size() == (size_t)N,
+           "size() should be 6");
+
+        // push front checks
         check(bm.front_block()->front() == (N - 1) * 5,
-              "front block should hold the last-pushed value (25)");
+           "front block should hold the last-pushed value (25)");
         check(bm.back_block()->front()  == 0,
-              "back block should hold the first-pushed value (0)");
+           "back block should hold the first-pushed value (0)");
+
+        // push back checks
+        check(bmb.back_block()->front() == (N - 1) * 5,
+           "back block should hold the last-pushed value (25)");
+        check(bmb.front_block()->front()  == 0,
+           "front block should hold the first-pushed value (0)");
     });
 
-    // -- Test 9: destructor / memory stress -------------------
+    // -- Test 10: destructor / memory stress -------------------
     // 15000 rounds x 500 blocks each.
     // A missing ~BlockMap leaks ~240 MB total, triggering std::bad_alloc.
     run_test("Destructor / memory stress", 2, [](){
