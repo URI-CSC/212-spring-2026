@@ -75,18 +75,6 @@ void SLList::clear() {
     //
     // IMPORTANT: save a pointer to the *next* node BEFORE deleting the current
     //            one -- after delete, the memory is gone and p->next is invalid.
-    //
-    //   Suggested skeleton:
-    //
-    //       Node* p = head;
-    //       while (p != nullptr) {
-    //           Node* next = p->next;   // save next BEFORE deleting p
-    //           delete p;
-    //           p = next;
-    //       }
-    //       head   = nullptr;
-    //       tail   = nullptr;
-    //       size_  = 0;
 }
 
 void SLList::pop_front() {
