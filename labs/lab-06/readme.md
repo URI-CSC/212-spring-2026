@@ -28,7 +28,7 @@ The lab has four parts:
 > correct when **both** the base case and the recursive case are right. Trace the first two or three
 > depth levels on paper before touching the keyboard. Discuss the logic with your group and ask the instructor or TA if you have any questions.
 
-## Part 1 - SVG Basics
+## Part 1: SVG Basics
 
 ### What is SVG?
 
@@ -102,7 +102,7 @@ text, redirect to a file, open in browser.
 > Your only output mechanism is `std::cout`. Do not open files, do not use any graphics library.
 > The browser handles all rendering.
 
-## Part 2 - Task 1: Linear Recursion
+## Part 2: Linear Recursion
 
 ### Concept
 
@@ -243,7 +243,7 @@ $ ./linear 6 > linear.svg
 > A missing or incorrect base case will cause infinite recursion and a stack overflow crash. Always
 > trace `depth == 0` and `depth == 1` by hand before compiling.
 
-## Part 3 - Task 2: Binary Recursion
+## Part 3: Binary Recursion
 
 ### Concept
 
@@ -394,7 +394,7 @@ $ ./binary 1 6 > binary-1.svg
 $ ./binary 2 6 > binary-2.svg
 ```
 
-## Part 4 - Task 3: Multiple Recursion
+## Part 4: Multiple Recursion
 
 ### Concept
 
