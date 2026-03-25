@@ -125,7 +125,7 @@ same center, a smaller square inside that one, and so on. Each square is scaled 
 factor relative to the one surrounding it.
 
 <p align="center">
-  <img src="./linear.png" width="65%">
+  <img src="./linear.png" width="75%">
 </p>
 
 At depth 1 you see one square. At depth N you see N concentric squares, all sharing the same center.
@@ -269,7 +269,7 @@ branches grow at symmetric angles, one to the left and one to the right. Each br
 trunk for the next level, spawning two more branches, and so on.
 
 <p align="center">
-  <img src="./tree.png" width="65%">
+  <img src="./tree.png" width="75%">
 </p>
 
 The key geometric sub-problem: given the **base point** and **tip point** of the current segment,
@@ -303,7 +303,7 @@ and then recurses into each arm, which becomes the crossbar of a smaller H. This
 recursion because the function calls itself exactly **twice** per level.
 
 <p align="center">
-  <img src="./h.png" width="65%">
+  <img src="./h.png" width="75%">
 </p>
 
 At `depth == 0` the function simply returns. At every deeper level it draws
@@ -420,7 +420,7 @@ midpoints of the three sides to divide the triangle into four smaller ones. Recu
 corner sub-triangles** and leave the center one empty. This is **three recursive calls** per level.
 
 <p align="center">
-  <img src="./sierpinski.png" width="65%">
+  <img src="./sierpinski.png" width="75%">
 </p>
 
 At `depth == 0` draw a single filled triangle. At every deeper level compute the three midpoints and
