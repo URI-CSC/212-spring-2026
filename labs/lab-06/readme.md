@@ -124,19 +124,9 @@ Your program draws **nested squares**: a large outer square, a smaller square in
 same center, a smaller square inside that one, and so on. Each square is scaled down by a fixed
 factor relative to the one surrounding it.
 
-```
-depth 4 (schematic):
-
-  +----------------------+
-  |  +----------------+  |
-  |  |  +----------+  |  |
-  |  |  |  +----+  |  |  |
-  |  |  |  |    |  |  |  |
-  |  |  |  +----+  |  |  |
-  |  |  +----------+  |  |
-  |  +----------------+  |
-  +----------------------+
-```
+<p align="center">
+  <img src="./linear.png" width="65%">
+</p>
 
 At depth 1 you see one square. At depth N you see N concentric squares, all sharing the same center.
 A scale factor of about 0.72 between consecutive squares works well; experiment freely.
@@ -406,6 +396,14 @@ int main(int argc, char* argv[]) {
     // Type 2: start a horizontal bar centered on the canvas.
     // YOUR CODE HERE
 }
+```
+
+Compile and run:
+
+```bash
+$ g++ -std=c++11 -Wall -Werror binary.cpp -o binary
+$ ./binary 1 6 > binary-1.svg
+$ ./binary 2 6 > binary-2.svg
 ```
 
 ## Part 4 - Task 3: Multiple Recursion
