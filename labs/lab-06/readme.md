@@ -268,15 +268,9 @@ A fractal tree starts with a single trunk line segment. From the tip of that tru
 branches grow at symmetric angles, one to the left and one to the right. Each branch is then the
 trunk for the next level, spawning two more branches, and so on.
 
-```
-depth 1:     depth 2:         depth 3:
-
-    |          \ | /           \|/ \|/
-    |           \|/             \   /
-    |            |               \ /
-                 |                |
-                 |                |
-```
+<p align="center">
+  <img src="./tree.png" width="65%">
+</p>
 
 The key geometric sub-problem: given the **base point** and **tip point** of the current segment,
 compute the base and tip of each of the two child segments. A child segment starts at the parent tip
@@ -308,15 +302,9 @@ crossbar of the first H), the function draws two perpendicular arms, one at each
 and then recurses into each arm, which becomes the crossbar of a smaller H. This is binary
 recursion because the function calls itself exactly **twice** per level.
 
-```
-depth 1:            depth 2:
-
-  |    |           -+  +-    -+  +-
-  |    |            |  |      |  |
-  +----+           -+--+------+--+-
-  |    |            |  |      |  |
-  |    |           -+  +-    -+  +-
-```
+<p align="center">
+  <img src="./h.png" width="65%">
+</p>
 
 At `depth == 0` the function simply returns. At every deeper level it draws
 the current connecting bar and recurses into the two perpendicular arms, each **half the length** of
