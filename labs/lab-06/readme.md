@@ -419,17 +419,9 @@ The Sierpinski triangle starts with a filled equilateral triangle. At each level
 midpoints of the three sides to divide the triangle into four smaller ones. Recurse into the **three
 corner sub-triangles** and leave the center one empty. This is **three recursive calls** per level.
 
-```
-depth 0:       depth 1:         depth 2:
-
-    *              *                *
-   ***            * *              * *
-  *****          *   *            *   *
- *******        *-----*          *--   --*
-                * *   * *       * *     * *
-               *   * *   *     *   *   *   *
-              *-----*-----*   *-----* *-----*
-```
+<p align="center">
+  <img src="./sierpinski.png" width="65%">
+</p>
 
 At `depth == 0` draw a single filled triangle. At every deeper level compute the three midpoints and
 recurse. No drawing happens at the intermediate levels.
