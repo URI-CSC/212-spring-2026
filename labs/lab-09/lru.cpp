@@ -1,5 +1,5 @@
 // lru.cpp
-// Lab 09 — Search Like a Machine, Part 2
+// Lab 09 — Autocomplete, Part 2
 // CSC 212 Data Structures
 //
 // Your job: implement the LRUCache class, then wire it around autocomplete()
@@ -83,9 +83,9 @@ private:
     //         Maps each key to its node's iterator in _cache.
     //         This is what makes get() and put() O(1).
     //
-    // ⚠️  CAUTION: Iterators into a std::list remain valid as long as the
-    //     node exists. Never copy the list — always use references.
-    //     std::list::splice() is your friend for moving nodes around.
+    //    CAUTION: Iterators into a std::list remain valid as long as the
+    //             node exists. Never copy the list — always use references.
+    //             std::list::splice() is your friend for moving nodes around.
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -179,7 +179,7 @@ int main() {
 
         // TODO: auto t_start = std::chrono::high_resolution_clock::now()
         //
-        // TODO: result = cache.get(prefix)
+        // TODO: std::vector<std::string> result = cache.get(prefix)
         // TODO: if result is empty (MISS):
         //           result = autocomplete(prefix, words, freq, TOP_N)
         //           cache.put(prefix, result)

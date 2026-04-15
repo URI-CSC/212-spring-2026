@@ -1,5 +1,5 @@
 // unittester.cpp
-// Lab 09 — Search Like a Machine
+// Lab 09 — Autocomplete
 // CSC 212 Data Structures
 //
 // Compile:
@@ -60,7 +60,7 @@ static bool contains(const std::vector<std::string>& vec,
     return false;
 }
 
-// Returns true if vec[i] has >= frequency than vec[i+1] for all i.
+// Returns true if vec[i] has frequency >= that of vec[i+1] for all i.
 // (Checks that results are non-increasing in frequency.)
 static bool isSortedByFreqDesc(const std::vector<std::string>& vec,
                                 const std::map<std::string, int>& freq) {

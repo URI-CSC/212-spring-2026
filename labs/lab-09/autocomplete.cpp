@@ -1,5 +1,5 @@
 // autocomplete.cpp
-// Lab 09 — Search Like a Machine, Part 1
+// Lab 09 — Autocomplete, Part 1
 // CSC 212 Data Structures
 //
 // Your job: implement loadDictionary() and autocomplete().
@@ -71,7 +71,7 @@ void loadDictionary(const std::string& filename,
 //   No matches → return empty vector.
 //
 // Key containers to use inside this function:
-//   std::set::lower_bound(prefix)     → O(log n) jump to first candidate
+//   words.lower_bound(prefix)     → O(log n) jump to first candidate
 //   std::priority_queue<std::pair<int,std::string>>  → top-N extraction
 // ─────────────────────────────────────────────────────────────────────────────
 std::vector<std::string> autocomplete(const std::string& prefix,
