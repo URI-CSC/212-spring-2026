@@ -24,7 +24,7 @@ The lab has two parts:
 
 ### What is a hash table?
 
-A **hash table** maps each value to a **bucket** using a **hash function**: a deterministic function that converts a value into an integer index in $$[0, \text{bucket\_count})$$. Ideally every value lands in a different bucket, giving $$O(1)$$ average insert, lookup, and remove. In practice, two distinct values may produce the same bucket index, this is called a **collision**.
+A **hash table** maps each value to a **bucket** using a **hash function**: a deterministic function that converts a value into an integer index in $$[0, \text{bucketcount})$$. Ideally every value lands in a different bucket, giving $$O(1)$$ average insert, lookup, and remove. In practice, two distinct values may produce the same bucket index, this is called a **collision**.
 
 ### Set vs. Map
 
