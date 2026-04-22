@@ -77,34 +77,34 @@ The **load factor** is `size / bucket_count`. It measures the average chain leng
 
 Implement every method marked `// TODO` in `hashset.hpp`. All data members are already declared for you. The section below restates each method's contract. Treat it as a specification, not a step-by-step guide.
 
-**`HashSet(size_t num_buckets = 16)`**
+- **`HashSet(size_t num_buckets = 16)`**
 Constructs a set with `num_buckets` empty chains and `n_elem = 0`. `num_buckets` is always >= 1.
 
-**`size_t _bucket_index(const T& value) const`** *(private)*
+- **`size_t _bucket_index(const T& value) const`** *(private)*
 Use the standard-library hash functor to calculate a hash value and then use modulo to map it to a valid bucket. Return the resulting bucket index. All other methods use this to map a value to its bucket.
 
-**`void insert(const T& value)`**
+- **`void insert(const T& value)`**
 If `value` is not in the set, add it to its bucket chain and increment `n_elem`. If it is already present, do nothing, sets have no duplicates.
 
-**`bool contains(const T& value) const`**
+- **`bool contains(const T& value) const`**
 Return `true` if `value` is in the set, `false` otherwise. Do not modify the set.
 
-**`bool remove(const T& value)`**
+- **`bool remove(const T& value)`**
 If `value` is in the set, remove it from its chain, decrement `n_elem`, and return `true`. If not found, return `false` and leave the set unchanged.
 
-**`size_t size() const`**
+- **`size_t size() const`**
 Return the number of elements.
 
-**`bool empty() const`**
+- **`bool empty() const`**
 Return `true` if the set is empty.
 
-**`float load_factor() const`**
+- **`float load_factor() const`**
 Return the current load factor.
 
-**`size_t bucket_count() const`**
+- **`size_t bucket_count() const`**
 Return the number of buckets.
 
-**`void rehash(size_t new_bucket_count)`**
+- **`void rehash(size_t new_bucket_count)`**
 Rebuild the table with `new_bucket_count` buckets. Re-insert every existing element under the new mapping. `size()` must be unchanged after the call.
 
 ### Your work: Unit Tester
