@@ -312,7 +312,7 @@ writing a single line.
 |--------|-----------|
 | `build_overlap_graph` | Given candidates already sorted by score descending, returns an adjacency list where `adj[i]` is the set of indices `j` with `IoU(sorted[i], sorted[j]) > IOU_THRESHOLD`. The graph is undirected: if `j` is in `adj[i]` then `i` is in `adj[j]`. Every index `0 .. n-1` has an entry even if its neighbor set is empty. |
 | `nms_queue` | Runs the full three-phase NMS pipeline (sort, build graph, expand components) using `std::queue<int>` as the traversal frontier, giving BFS order. Returns one survivor per connected component, the highest-scoring box in that component. |
-| `nms_stack` | **Bonus (15 pts).** Same logic as `nms_queue`; replace `std::queue<int>` with `std::stack<int>` for DFS order. Must return the same survivor set as `nms_queue`. Attempt only after `nms_queue` passes all tests. |
+| `nms_stack` | **Bonus (15 pts in `test_nms`; also required for 3 pts in `test_pipeline`).** Same logic as `nms_queue`; replace `std::queue<int>` with `std::stack<int>` for DFS order. Must return the same survivor set as `nms_queue`. Implement only after `nms_queue` passes all tests. Note: skipping `nms_stack` forfeits the 15 bonus pts in `test_nms` **and** the 3-pt "queue and stack agree" test in `test_pipeline`. |
 
 After implementing the methods, run the tests:
 
@@ -321,10 +321,11 @@ g++ -std=c++17 -Wall -Werror bbox.cpp nms.cpp test_nms.cpp -o test_nms
 ./test_nms
 ```
 
-### Section 2: Query functions  (13 pts)
+### Section 2: Query functions  (13 pts, tested as part of Section 3)
 
 Complete `part2/query.cpp`. Four functions that answer different questions about the survivor list.
 The container choice is the exercise. `category_names.h` provides `category_name(int id)` for label lookup.
+These 13 pts are Section C of `test_pipeline` — they are already included in the 35-pt total below, not additional.
 
 | Function | Returns | Container |
 |----------|---------|-----------|
@@ -333,7 +334,7 @@ The container choice is the exercise. `category_names.h` provides `category_name
 | `find_by_name` | Survivors whose category name contains `substr` | `map<string, int>` (RB-tree ordered by name) |
 | `score_range` | Survivors with score in [lo, hi], descending | `multimap<float, BBox, greater<float>>` + `lower_bound`/`upper_bound` |
 
-### Section 3: Full Pipeline  (35 pts total, via `test_pipeline`)
+### Section 3: Full Pipeline  (35 pts total, via `test_pipeline` — includes the 13 query pts above)
 
 `main.cpp` is **fully provided** -- you do not write it.
 Read it carefully: it shows you how the pieces fit together.
@@ -361,8 +362,10 @@ g++ -std=c++17 -Wall -Werror bbox.cpp nms.cpp csv.cpp query.cpp \
 ## Submission and Grading
 
 The 10-point buffer (110 required, capped at 100) lets you miss a few required
-tests and still reach full code score.  Attempt `nms_stack` only after
-everything else passes. Each `.cpp` you submit compiles cleanly with `g++ -std=c++17 -Wall -Werror`.
+tests and still reach full code score.  Required points break down as:
+`test_bbox` (10) + `test_index` (30) + `test_nms` required (35) + `test_pipeline` (35) = 110.
+Implement `nms_stack` only after everything else passes; it adds up to 18 pts
+(15 in `test_nms` bonus + 3 in `test_pipeline`). Each `.cpp` you submit compiles cleanly with `g++ -std=c++17 -Wall -Werror`.
 
 Submit exactly these files on Gradescope:
 
